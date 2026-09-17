@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wellspring LMS | Official University Portal</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#082c4c',
+              dark: '#04172a',
+              light: '#0d3d66'
+            },
+            blue: {
+              DEFAULT: '#0879bd',
+              light: '#38bdf8'
+            },
+            gold: {
+              DEFAULT: '#e4b547',
+              light: '#fef08a'
+            },
+            paper: '#f8f6f0'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-paper text-gray-800 antialiased min-h-screen flex flex-col">
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="landing.html" class="flex items-center gap-3">
+        <img src="../public/welsu-logo.png" alt="Wellspring University Logo" class="h-11 w-auto object-contain" onError="this.onerror=null; this.src='https://via.placeholder.com/150x50?text=Wellspring+LMS';">
+        <div>
+          <span class="block font-bold text-navy text-lg leading-tight tracking-tight">Wellspring LMS</span>
+          <span class="block text-[11px] font-semibold text-blue uppercase tracking-wider">Learning Management System</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-600">
+        <a href="#hero" class="hover:text-blue transition">Home</a>
+        <a href="#features" class="hover:text-blue transition">LMS Features</a>
+        <a href="#catalog" class="hover:text-blue transition">Course Directory</a>
+        <a href="#announcements" class="hover:text-blue transition">Announcements</a>
+        <a href="#contact" class="hover:text-blue transition">Contact</a>
+      </nav>
+
+      <!-- Portal Action Buttons -->
+      <div class="flex items-center gap-3">
+        <a href="login.html?role=student" class="px-5 py-2.5 rounded-xl text-xs font-bold text-navy bg-gray-100 hover:bg-gray-200 transition">
+          Student Sign In
+        </a>
+        <a href="login.html" class="px-5 py-2.5 rounded-xl text-xs font-bold text-white gradient-blue-btn flex items-center gap-2 shadow-md">
+          <i data-lucide="log-in" class="w-4 h-4"></i> Access LMS Portal
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section id="hero" class="relative gradient-hero text-white py-20 lg:py-28 overflow-hidden">
+    <!-- Background grid decoration -->
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:20px_20px]"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column: Copy & CTAs -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-light text-xs font-bold uppercase tracking-widest mb-6">
+            <span class="w-2.5 h-2.5 rounded-full bg-gold animate-pulse"></span>
+            Wellspring University Official LMS
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight text-white mb-6">
+            Empowering Leaders Through Excellence & Digital Learning
+          </h1>
+
+          <p class="text-lg text-gray-300 mb-8 max-w-2xl leading-relaxed">
+            Welcome to Wellspring University's dedicated LMSportal. Access interactive lecture modules, take real-time CBT examinations, check continuous assessment grades, and submit coursework.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="login.html" class="px-7 py-3.5 rounded-xl text-sm font-bold text-navy bg-gold hover:bg-yellow-400 transition flex items-center gap-2 shadow-lg pulse-glow">
+              <i data-lucide="shield-check" class="w-5 h-5"></i> Login to Student Portal
+            </a>
+            <button id="direct-demo-student-btn" class="px-7 py-3.5 rounded-xl text-sm font-bold text-white border border-white/20 hover:bg-white/10 transition flex items-center gap-2">
+              <i data-lucide="play-circle" class="w-5 h-5 text-blue-light"></i> Launch Demo Dashboard
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Portal Showcase Card -->
+        <div class="lg:col-span-5">
+          <div class="bg-white/10 backdrop-blur-xl border border-white/15 p-6 sm:p-8 rounded-3xl shadow-2xl relative">
+            <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-gold/20 flex items-center justify-center text-gold font-bold text-lg">
+                  WSU
+                </div>
+                <div>
+                  <h3 class="font-bold text-white text-lg">LMS Portal</h3>
+                  <p class="text-xs text-blue-light">2026 Academic Session</p>
+                </div>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">System Active</span>
+            </div>
+
+            <!-- Fast Action Access Box -->
+            <div class="bg-navy-dark/90 p-5 rounded-2xl border border-white/10 mb-6 space-y-3">
+              <p class="text-xs font-bold text-gray-300 uppercase tracking-wider">Instant Portal Evaluation Access</p>
+              
+              <button id="quick-student-portal-btn" class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl transition flex items-center justify-between shadow-md">
+                <span class="flex items-center gap-2"><i data-lucide="user" class="w-4 h-4"></i> Enter as Demo Student</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+
+              <button id="quick-faculty-portal-btn" class="w-full py-3 px-4 bg-navy-light hover:bg-blue-900 text-white font-bold text-xs rounded-xl transition flex items-center justify-between border border-white/10">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-gold"></i> Enter as Demo Lecturer</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- Stats grid -->
+            <div class="grid grid-cols-3 gap-3 text-center">
+              <div class="p-3 bg-white/5 rounded-xl border border-white/5">
+                <p class="font-bold text-white text-xl">25+</p>
+                <p class="text-[10px] text-gray-400 uppercase font-medium">Departments</p>
+              </div>
+              <div class="p-3 bg-white/5 rounded-xl border border-white/5">
+                <p class="font-bold text-gold text-xl">150+</p>
+                <p class="text-[10px] text-gray-400 uppercase font-medium">LMS Courses</p>
+              </div>
+              <div class="p-3 bg-white/5 rounded-xl border border-white/5">
+                <p class="font-bold text-blue-light text-xl">4.68</p>
+                <p class="text-[10px] text-gray-400 uppercase font-medium">Avg Student GPA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       LMS PLATFORM FEATURES
+       ========================================================================== -->
+  <section id="features" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold text-blue tracking-widest uppercase mb-2 block">Built for Academic Excellence</span>
+        <h2 class="text-3xl sm:text-4xl font-normal text-navy">Everything You Need for Digital Learning</h2>
+        <p class="text-sm text-gray-600 mt-3 leading-relaxed">Our LMS connects students, lecturers, and academic departments into one seamless digital campus ecosystem.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Feature 1 -->
+        <div class="p-8 bg-paper rounded-3xl border border-gray-100 hover:shadow-xl transition group">
+          <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="video" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 mb-3">Video & Text Classrooms</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">Watch HD lectures, download lecture notes, and track individual lesson completion in real time.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="p-8 bg-paper rounded-3xl border border-gray-100 hover:shadow-xl transition group">
+          <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="check-square" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 mb-3">CBT Quiz Engine</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">Attempt timed continuous assessment tests with instant score calculation and answer review explanations.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="p-8 bg-paper rounded-3xl border border-gray-100 hover:shadow-xl transition group">
+          <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="bar-chart-3" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 mb-3">Live Gradebook</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">Transparent tracking of CAT 1, CAT 2, final exam marks, letter grades, and cumulative GPA statistics.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="p-8 bg-paper rounded-3xl border border-gray-100 hover:shadow-xl transition group">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="upload-cloud" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 mb-3">Assignment Hub</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">Upload coursework assignments online, view submission statuses, and read lecturer feedback.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       FEATURED COURSE CATALOG PREVIEW
+       ========================================================================== -->
+  <section id="catalog" class="py-20 bg-paper border-t border-gray-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-bold text-blue tracking-widest uppercase mb-2 block">Curriculum Explorer</span>
+          <h2 class="text-3xl sm:text-4xl font-normal text-navy">Featured LMS Courses</h2>
+        </div>
+
+        <!-- Category Filters & Search -->
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="relative">
+            <input type="text" id="landing-catalog-search" placeholder="Search course title or code..." class="w-64 pl-9 pr-4 py-2.5 bg-white border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-blue focus:outline-none shadow-sm">
+            <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3 top-3"></i>
+          </div>
+          <button data-filter="All" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-blue-600 text-white transition">All</button>
+          <button data-filter="Software Engineering" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 transition">Software Eng</button>
+          <button data-filter="Computer Science" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 transition">Computer Science</button>
+        </div>
+      </div>
+
+      <!-- Course Grid -->
+      <div id="landing-courses-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       CAMPUS ANNOUNCEMENTS
+       ========================================================================== -->
+  <section id="announcements" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold text-blue tracking-widest uppercase mb-2 block">Official Notices</span>
+        <h2 class="text-3xl font-normal text-navy">University News & Schedules</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 bg-amber-50/70 rounded-3xl border border-amber-200/80">
+          <div class="flex items-center justify-between gap-4 mb-3">
+            <span class="px-3 py-1 bg-amber-200 text-amber-900 font-bold text-[11px] rounded-full uppercase">Academic Notice</span>
+            <span class="text-xs text-gray-500 font-medium">Sep 15, 2026</span>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 mb-3">2026 First Semester Mid-Term CBT Timetable Published</h3>
+          <p class="text-xs text-gray-700 leading-relaxed mb-4">All 300 Level Computer Science and Software Engineering students are advised to log into their Wellspring LMS portal to verify CBT roster schedules for upcoming mid-semester examinations.</p>
+          <a href="login.html" class="text-xs font-bold text-navy hover:text-blue inline-flex items-center gap-1">
+            Check CBT Schedule <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <div class="p-8 bg-blue-50/70 rounded-3xl border border-blue-200/80">
+          <div class="flex items-center justify-between gap-4 mb-3">
+            <span class="px-3 py-1 bg-blue-200 text-blue-900 font-bold text-[11px] rounded-full uppercase">Guest Masterclass</span>
+            <span class="text-xs text-gray-500 font-medium">Sep 12, 2026</span>
+          </div>
+          <h3 class="font-bold text-xl text-gray-900 mb-3">Cloud Systems & AI Architecture by Google Engineers</h3>
+          <p class="text-xs text-gray-700 leading-relaxed mb-4">Join us this Friday at 10:00 AM in the University ICT Auditorium for an interactive session on cloud microservices, software architecture, and generative AI tools.</p>
+          <a href="login.html" class="text-xs font-bold text-navy hover:text-blue inline-flex items-center gap-1">
+            RSVP via Portal <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       CALL TO ACTION & FOOTER
+       ========================================================================== -->
+  <section class="py-16 gradient-hero text-white text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-normal text-white mb-4">Ready to Access Your Dashboard?</h2>
+      <p class="text-sm text-gray-300 mb-8 max-w-xl mx-auto">Sign in using your matriculation credentials to start learning, take CBT quizzes, and view your gradebook.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="login.html" class="px-8 py-4 rounded-xl text-sm font-bold text-navy bg-gold hover:bg-yellow-400 transition shadow-lg">
+          Sign In to Portal
+        </a>
+        <a href="dashboard.html" class="px-8 py-4 rounded-xl text-sm font-bold text-white border border-white/20 hover:bg-white/10 transition">
+          Direct Dashboard Access
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-navy-dark text-white py-12 mt-auto border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="../public/welsu-logo.png" alt="Wellspring Logo" class="h-9 w-auto brightness-200" onError="this.onerror=null; this.style.display='none';">
+            <span class="font-bold text-lg text-white">Wellspring LMS</span>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed">Official Learning Management System of Wellspring University. Empowering leaders through digital innovation.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-sm text-gold mb-3">Portal Navigation</h4>
+          <ul class="space-y-2 text-xs text-gray-300">
+            <li><a href="landing.html" class="hover:text-white transition">LMS Home Page</a></li>
+            <li><a href="login.html" class="hover:text-white transition">Student & Staff Login</a></li>
+            <li><a href="dashboard.html" class="hover:text-white transition">LMS Dashboard</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-sm text-gold mb-3">ICT Helpdesk</h4>
+          <ul class="space-y-2 text-xs text-gray-300">
+            <li>Email: <a href="mailto:ict@wellspringuniversity.edu.ng" class="underline">ict@wellspringuniversity.edu.ng</a></li>
+            <li>Support Line: +234 (0) 800 935 5777</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-sm text-gold mb-3">System Status</h4>
+          <p class="text-xs text-gray-400 leading-relaxed mb-3">Version 3.4.0 (2026 Academic Release)</p>
+          <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 text-[11px] font-bold rounded-full border border-emerald-500/30">All Services Operational</span>
+        </div>
+      </div>
+      <div class="pt-6 text-center text-xs text-gray-500">
+        &copy; 2026 Wellspring University. All rights reserved. Built with HTML, Tailwind CSS & JavaScript.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Initialize Lucide Icons
+      if (window.lucide) lucide.createIcons();
+
+      // Render Landing Catalog Courses
+      const grid = document.getElementById("landing-courses-grid");
+      const searchInput = document.getElementById("landing-catalog-search");
+      let activeCategory = "All";
+
+      function renderCourses() {
+        if (!grid || !LMS_DATA) return;
+        const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+
+        let filtered = LMS_DATA.courses;
+        if (activeCategory !== "All") {
+          filtered = filtered.filter(c => c.category === activeCategory);
+        }
+        if (query) {
+          filtered = filtered.filter(c => 
+            c.title.toLowerCase().includes(query) || 
+            c.code.toLowerCase().includes(query) ||
+            c.instructor.toLowerCase().includes(query)
+          );
+        }
+
+        grid.innerHTML = filtered.map(course => `
+          <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+            <div class="relative h-44 overflow-hidden">
+              <img src="${course.thumbnail}" alt="${course.title}" class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 bg-navy text-white text-xs font-bold px-2.5 py-1 rounded-md">
+                ${course.code}
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs text-gray-500 mb-2">
+                  <span class="text-blue font-semibold">${course.category}</span>
+                  <span>${course.credits} Credits</span>
+                </div>
+                <h3 class="font-bold text-lg text-gray-900 mb-2 leading-snug">${course.title}</h3>
+                <p class="text-xs text-gray-600 line-clamp-2 mb-4">${course.description}</p>
+              </div>
+
+              <div>
+                <div class="flex items-center gap-3 pt-3 border-t border-gray-100 mb-4">
+                  <img src="${course.instructorAvatar}" class="w-8 h-8 rounded-full object-cover" alt="Instructor">
+                  <div>
+                    <p class="text-xs font-bold text-gray-900">${course.instructor}</p>
+                    <p class="text-[10px] text-gray-500">${course.duration}</p>
+                  </div>
+                </div>
+
+                <a href="login.html" class="w-full py-2.5 px-4 bg-navy hover:bg-navy-light text-white rounded-lg text-xs font-bold transition flex items-center justify-center gap-2">
+                  <i data-lucide="book-open" class="w-4 h-4"></i> Access Course
+                </a>
+              </div>
+            </div>
+          </div>
+        `).join("");
+
+        if (window.lucide) lucide.createIcons();
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener("input", renderCourses);
+      }
+
+      document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          document.querySelectorAll(".filter-btn").forEach(b => b.classList.replace("bg-blue-600", "bg-white"));
+          document.querySelectorAll(".filter-btn").forEach(b => b.classList.replace("text-white", "text-gray-700"));
+          e.currentTarget.classList.replace("bg-white", "bg-blue-600");
+          e.currentTarget.classList.replace("text-gray-700", "text-white");
+          activeCategory = e.currentTarget.getAttribute("data-filter");
+          renderCourses();
+        });
+      });
+
+      renderCourses();
+
+      // Quick Demo Handlers
+      const quickStudentBtn = document.getElementById("quick-student-portal-btn");
+      const quickFacultyBtn = document.getElementById("quick-faculty-portal-btn");
+      const directDemoBtn = document.getElementById("direct-demo-student-btn");
+
+      if (quickStudentBtn) {
+        quickStudentBtn.addEventListener("click", () => {
+          localStorage.setItem("welsu_lms_user", JSON.stringify(LMS_DATA.studentProfile));
+          window.location.href = "student-dashboard.html";
+        });
+      }
+
+      if (quickFacultyBtn) {
+        quickFacultyBtn.addEventListener("click", () => {
+          localStorage.setItem("welsu_lms_user", JSON.stringify(LMS_DATA.facultyProfile));
+          window.location.href = "lecturer-dashboard.html";
+        });
+      }
+
+      if (directDemoBtn) {
+        directDemoBtn.addEventListener("click", () => {
+          localStorage.setItem("welsu_lms_user", JSON.stringify(LMS_DATA.studentProfile));
+          window.location.href = "student-dashboard.html";
+        });
+      }
+    });
+  </script>
+</body>
+</html>

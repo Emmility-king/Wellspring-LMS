@@ -1,0 +1,180 @@
+/* ==========================================================================
+   Wellspring LMS - Custom Styles & Color Palette
+   ========================================================================== */
+
+:root {
+  --navy: #082c4c;
+  --navy-dark: #04172a;
+  --navy-light: #0d3d66;
+  --blue: #0879bd;
+  --blue-light: #38bdf8;
+  --blue-glow: rgba(8, 121, 189, 0.15);
+  --gold: #e4b547;
+  --gold-light: #fef08a;
+  --gold-glow: rgba(228, 181, 71, 0.25);
+  --paper: #f8f6f0;
+  --paper-card: #ffffff;
+  --ink: #142f43;
+  --muted: #627785;
+  --line: #e2e8ea;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --glass-bg: rgba(255, 255, 255, 0.92);
+  --glass-border: rgba(8, 44, 76, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .brand-font {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(8, 44, 76, 0.03);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(8, 44, 76, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue);
+}
+
+/* Glassmorphism & Card Effects */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #04172a 0%, #082c4c 50%, #0d3d66 100%);
+}
+
+.gradient-gold-badge {
+  background: linear-gradient(135deg, #e4b547 0%, #d49e29 100%);
+}
+
+.gradient-blue-btn {
+  background: linear-gradient(135deg, #0879bd 0%, #066097 100%);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gradient-blue-btn:hover {
+  background: linear-gradient(135deg, #0988d4 0%, #0879bd 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(8, 121, 189, 0.35);
+}
+
+/* Modal Animations */
+.modal-overlay {
+  transition: opacity 0.3s ease;
+}
+.modal-container {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.modal-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-hidden .modal-container {
+  transform: scale(0.95) translateY(12px);
+}
+
+/* Tab Navigation Active State */
+.nav-tab-active {
+  background-color: var(--navy);
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(8, 44, 76, 0.2);
+}
+
+.nav-tab-active i,
+.nav-tab-active svg {
+  color: var(--gold-light) !important;
+}
+
+/* Badge Styles */
+.badge-tech {
+  background-color: rgba(8, 121, 189, 0.1);
+  color: var(--blue);
+  border: 1px solid rgba(8, 121, 189, 0.2);
+}
+
+.badge-gold {
+  background-color: rgba(228, 181, 71, 0.15);
+  color: #b48316;
+  border: 1px solid rgba(228, 181, 71, 0.3);
+}
+
+/* Quiz Radio Custom Option Cards */
+.quiz-option {
+  transition: all 0.2s ease;
+  border: 2px solid #e2e8ea;
+}
+
+.quiz-option:hover {
+  border-color: var(--blue);
+  background-color: rgba(8, 121, 189, 0.03);
+}
+
+.quiz-option.selected {
+  border-color: var(--blue);
+  background-color: rgba(8, 121, 189, 0.08);
+}
+
+/* File Drag and Drop Zone */
+.drag-drop-zone {
+  border: 2px dashed #cbd5e1;
+  transition: all 0.2s ease;
+}
+
+.drag-drop-zone.dragover {
+  border-color: var(--blue);
+  background-color: rgba(8, 121, 189, 0.05);
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(228, 181, 71, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(228, 181, 71, 0);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
